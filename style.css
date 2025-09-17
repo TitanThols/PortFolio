@@ -469,6 +469,9 @@ form .btn {
 }
 
 /* Responsive Design */
+/* ... (keep all your existing CSS above the media queries) ... */
+
+/* Responsive Design */
 @media(max-width: 1024px){
   #nav {
     padding: 1.5em 10%;
@@ -498,28 +501,38 @@ form .btn {
     display: block;
   }
   
-  .links {
+  #nav ul {
     position: absolute;
     top: 100%;
     right: 0;
     width: 100%;
-    padding: 2em;
+    padding: 0;
     background: rgba(15,15,15,0.95);
     backdrop-filter: blur(10px);
     flex-direction: column;
     text-align: center;
-    gap: 1.5em;
-    display: none;
+    gap: 0;
+    display: flex;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
     border-top: 1px solid rgba(255,255,255,0.1);
   }
-  
-  .links a {
-    font-size: 1.2em;
-    padding: 0.5em 0;
+
+  #nav ul.active {
+    max-height: 500px; /* big enough to fit menu */
+    padding: 2em 0;
   }
   
-  .links.active {
-    display: flex;
+  #nav ul li {
+    width: 100%;
+    padding: 0.8em 0;
+  }
+  
+  #nav ul a {
+    display: block;
+    width: 100%;
+    padding: 0.8em 0;
   }
   
   #home {
