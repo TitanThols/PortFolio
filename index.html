@@ -6,142 +6,210 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tholkappian Murugesan - Portfolio</title>
   <meta name="description"
-    content="Portfolio of Tholkappian Murugesan, B.Tech CS&E student at IIIT Sri City. Full-stack developer skilled in React, Node.js, MongoDB and more.">
+    content="Portfolio of Tholkappian Murugesan, B.Tech CS&E student at IIIT Sri City. Full-stack developer.">
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+  <!-- Outfit Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+  <!-- Dynamic Background Elements -->
+  <div id="particles-js"></div>
+  <div class="bg-shape shape-1"></div>
+  <div class="bg-shape shape-2"></div>
+  <div class="bg-shape shape-3"></div>
+
   <nav id="nav">
-    <a href="#home" class="logo"><span>Tholkappian Murugesan</span></a>
+    <a href="#home" class="logo"><span>Tholkappian.</span></a>
     <ul class="links">
       <li><a href="#home">Home</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#education">Education</a></li>
-      <li><a href="#projects">Projects</a></li>
       <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <i class='bx bx-menu' id="menu"></i>
-    <a href="Resume.pdf" class="btn" target="_blank">Resume</a>
+    <a href="Resume.pdf" class="btn nav-btn" target="_blank">Resume</a>
   </nav>
 
   <!-- HOME -->
   <section id="home">
-    <img src="Thols.webp" alt="A photo of Tholkappian Murugesan">
+    <div class="home-content">
+      <div class="info-box">
+        <h1 class="hero-title"><span>Hi, I'm Tholkappian</span></h1>
+        <h2 class="hero-subtitle"><span class="typing"></span></h2>
+        <h3 class="hero-tagline"><span>IIIT Sri City</span></h3>
+      </div>
 
-    <div class="info-box">
-      <h1><span>Hi, I'm Tholkappian</span></h1>
-      <h1><span>B.Tech CSE Student</span></h1>
-      <h1><span>IIIT Sri City</span></h1>
+      <div class="home-links">
+        <a href="https://github.com/TitanThols" target="_blank" class="home-link-btn glass" id="github-link">
+          <i class='bx bxl-github'></i> GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/tholkappian-murugesan-bb401a326/" target="_blank"
+          class="home-link-btn glass" id="linkedin-link">
+          <i class='bx bxl-linkedin'></i> LinkedIn
+        </a>
+        <a href="https://promap-ebon.vercel.app" target="_blank" class="home-link-btn glass" id="liveproject-link">
+          <i class='bx bx-link-external'></i> Live Project
+        </a>
+        <a href="https://leetcode.com/u/Thols_10/" target="_blank" class="home-link-btn glass" id="leetcode-link">
+          <i class='bx bx-code-alt'></i> LeetCode
+        </a>
+      </div>
+
+      <div class="btn-box">
+        <a class="btn primary-btn" href="Resume.pdf" target="_blank" id="download-resume-btn">Download Resume</a>
+        <a class="btn secondary-btn" href="#contact" id="get-in-touch-btn">Get In Touch</a>
+      </div>
     </div>
 
-    <div class="home-links">
-      <a href="https://github.com/TitanThols" target="_blank" class="home-link-btn" id="github-link">
-        <i class='bx bxl-github'></i> GitHub
-      </a>
-      <a href="https://www.linkedin.com/in/tholkappian-murugesan-bb401a326/" target="_blank" class="home-link-btn"
-        id="linkedin-link">
-        <i class='bx bxl-linkedin'></i> LinkedIn
-      </a>
-      <a href="https://promap-ebon.vercel.app" target="_blank" class="home-link-btn" id="liveproject-link">
-        <i class='bx bx-link-external'></i> Live Project
-      </a>
-      <a href="https://leetcode.com/u/Thols_10/" target="_blank" class="home-link-btn" id="leetcode-link">
-        <i class='bx bx-code-alt'></i> LeetCode
-      </a>
-    </div>
-
-    <div class="btn-box">
-      <a class="btn" href="Resume.pdf" target="_blank" id="download-resume-btn">Download Resume</a>
-      <a class="btn" href="#contact" id="get-in-touch-btn">Get In Touch</a>
+    <div class="home-img-wrapper">
+      <div class="img-glow"></div>
+      <img src="Thols.webp" alt="Tholkappian Murugesan" class="home-img">
     </div>
   </section>
 
   <!-- ABOUT -->
   <section id="about">
+    <div class="about-img-wrapper">
+      <div class="img-glow"></div>
+      <img src="DSC_5988.JPG" alt="Tholkappian" class="about-img">
+    </div>
+
     <div class="about-text">
-      <h1><span>About Me</span></h1>
-      <p>
+      <h1 class="section-title"><span>About Me</span></h1>
+      <p class="about-desc">
         I'm a Computer Science student passionate about full-stack web development, building scalable applications and
         intelligent systems that address real-world problems. I enjoy combining creativity with logic to craft
         impactful, user-friendly products.
       </p>
-      <p>
-        Curious and driven, I constantly seek opportunities to learn, innovate, and collaborate. My goal is to use my
-        technical skills and problem-solving mindset to contribute to meaningful projects that make a positive
-        difference.
-      </p>
 
-      <div class="skills">
+      <div class="skills glass-card">
         <h2><span>Technical Skills</span></h2>
         <div class="skills-grid">
-          <div class="skill-group">
-            <h3 class="skill-label">Languages</h3>
-            <div class="skill-tags">
-              <span class="tag">JavaScript</span>
-              <span class="tag">C++</span>
-              <span class="tag">Java</span>
-              <span class="tag">Python</span>
-            </div>
-          </div>
-          <div class="skill-group">
-            <h3 class="skill-label">Frontend</h3>
-            <div class="skill-tags">
-              <span class="tag">React.js</span>
-              <span class="tag">HTML5</span>
-              <span class="tag">CSS3</span>
-            </div>
-          </div>
-          <div class="skill-group">
-            <h3 class="skill-label">Backend</h3>
-            <div class="skill-tags">
-              <span class="tag">Node.js</span>
-              <span class="tag">Express.js</span>
-            </div>
-          </div>
           <div class="skill-group">
             <h3 class="skill-label">Databases</h3>
             <div class="skill-tags">
               <span class="tag">MongoDB</span>
-              <span class="tag">MySQL</span>
+              <span class="tag">PostgreSQL</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <h3 class="skill-label">Frameworks & Libraries</h3>
+            <div class="skill-tags">
+              <span class="tag">ASP.Net</span>
+              <span class="tag">Node.js</span>
+              <span class="tag">Express.js</span>
+              <span class="tag">React.js</span>
+              <span class="tag">Tailwind CSS</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <h3 class="skill-label">Programming Languages</h3>
+            <div class="skill-tags">
+              <span class="tag">C</span>
+              <span class="tag">C++</span>
+              <span class="tag">Java</span>
+              <span class="tag">Python</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
             </div>
           </div>
           <div class="skill-group">
             <h3 class="skill-label">Tools & Platforms</h3>
             <div class="skill-tags">
               <span class="tag">Git</span>
-              <span class="tag">GitHub</span>
-              <span class="tag">Postman</span>
               <span class="tag">Vercel</span>
               <span class="tag">Render</span>
+              <span class="tag">Postman</span>
+              <span class="tag">Docker</span>
+              <span class="tag">Cloudflare R2</span>
             </div>
           </div>
         </div>
       </div>
     </div>
-
-    <div class="about-img">
-      <img src="DSC_5988.JPG" alt="A photo of Tholkappian">
-    </div>
   </section>
 
   <!-- EDUCATION -->
   <section id="education">
-    <h1 class="section-title"><span>Education</span></h1>
-    <div class="edu-card">
-      <div class="edu-icon">
-        <i class='bx bxs-graduation'></i>
+    <h1 class="section-title text-center"><span>Education & Awards</span></h1>
+    <div class="edu-grid">
+      <div class="edu-card glass-card">
+        <div class="edu-icon"><i class='bx bxs-graduation'></i></div>
+        <div class="edu-info">
+          <h2><span>Indian Institute of Information Technology (IIIT) Sri City</span></h2>
+          <p class="edu-degree">B.Tech in Computer Science and Engineering</p>
+          <div class="edu-meta">
+            <span class="edu-tag"><i class='bx bx-calendar'></i> 2024 - 2028</span>
+            <span class="edu-tag"><i class='bx bx-bar-chart-alt-2'></i> CGPA: 8.76</span>
+          </div>
+          <p class="edu-coursework"><strong>Relevant Coursework:</strong> Data Structures, Operating System, Object
+            Oriented Programming, Full Stack Architecture</p>
+        </div>
       </div>
-      <div class="edu-info">
-        <h2><span>Indian Institute of Information Technology (IIIT) Sri City</span></h2>
-        <p class="edu-degree">B.Tech in Computer Science and Engineering</p>
-        <div class="edu-meta">
-          <span class="edu-tag"><i class='bx bx-calendar'></i> Expected Graduation: 2028</span>
-          <span class="edu-tag"><i class='bx bx-bar-chart-alt-2'></i> Current CGPA: 8.71</span>
+      <div class="edu-card glass-card">
+        <div class="edu-icon"><i class='bx bxs-trophy'></i></div>
+        <div class="edu-info">
+          <h2><span>Innoventures</span></h2>
+          <p class="edu-degree">Intracollege Hackathon</p>
+          <div class="edu-meta">
+            <span class="edu-tag highlight"><i class='bx bx-medal'></i> 1st Place</span>
+          </div>
+          <p class="edu-coursework">Demonstrated exceptional problem solving and rapid prototyping under a strict
+            deadline.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <h1 class="section-title text-center"><span>Work Experience</span></h1>
+    <div class="timeline">
+      <div class="timeline-item glass-card">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-header">
+            <h2><span>Full Stack Intern</span> @ ForgeYourPeak</h2>
+            <span class="timeline-date">May 2026 - Jul 2026 | Remote, Chennai</span>
+          </div>
+          <ul class="timeline-points">
+            <li><strong>Architected</strong> a custom EdTech platform utilizing ASP.NET Core and React, replacing legacy
+              third-party infrastructure and eliminating 100% of platform transaction fees.</li>
+            <li><strong>Designed</strong> a normalized PostgreSQL database schema with Entity Framework Core, enforcing
+              strict JWT Claims-Based Authorization.</li>
+            <li><strong>Prototyped</strong> an adaptive-bitrate HLS video streaming pipeline using Cloudflare R2, aiming
+              to cut bandwidth egress costs by 100% and improve global video load times by up to 40%.</li>
+          </ul>
+          <div class="project-tags mt-3">
+            <span class="tag">React</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">Tailwind CSS</span>
+            <span class="tag">.NET 9</span>
+            <span class="tag">CloudFlare R2</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item glass-card">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-header">
+            <h2><span>WebDev Member</span> @ IOTA</h2>
+          </div>
+          <ul class="timeline-points">
+            <li>Contributing to web development projects, learning modern frameworks and building responsive
+              applications.</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -149,86 +217,117 @@
 
   <!-- PROJECTS -->
   <section id="projects">
-    <h1 class="section-title"><span>Projects</span></h1>
+    <h1 class="section-title text-center"><span>Projects</span></h1>
     <div class="projects-grid">
 
-      <div class="project-card" id="project-fullstack">
+      <!-- Project 1 -->
+      <div class="project-card glass-card">
         <div class="project-header">
-          <h2><span>Full-Stack Project Manager Application</span></h2>
-          <div class="project-tags">
-            <span class="tag">React</span>
-            <span class="tag">Node.js</span>
-            <span class="tag">Express</span>
-            <span class="tag">MongoDB</span>
+          <h2><span>OSS Dependency Analyser</span></h2>
+          <div class="project-links">
+            <a href="#" class="icon-link"><i class='bx bxl-github'></i></a>
+          </div>
+        </div>
+        <span class="project-date">Jul 2026 - Jul 2026</span>
+        <ul class="project-points">
+          <li><strong>Engineered</strong> a Full-Stack analyzer with .NET 9 backend and React/TypeScript frontend to
+            scan GitHub repositories for vulnerable libraries.</li>
+          <li><strong>Implemented Asynchronous Processing</strong> – Integrated Hangfire and Redis for non-blocking
+            background jobs fetching from GitHub API.</li>
+          <li><strong>Built Real-Time Vulnerability Pipeline</strong> – Automated NVD cross-referencing, calculating
+            risk scores, pushing updates via SignalR.</li>
+        </ul>
+        <div class="project-tags">
+          <span class="tag">.NET 9</span>
+          <span class="tag">EF Core</span>
+          <span class="tag">Hangfire</span>
+          <span class="tag">SignalR</span>
+          <span class="tag">React</span>
+          <span class="tag">Redis</span>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project-card glass-card">
+        <div class="project-header">
+          <h2><span>ProMap</span></h2>
+          <div class="project-links">
+            <a href="https://promap-ebon.vercel.app" class="icon-link" target="_blank"><i
+                class='bx bx-link-external'></i></a>
+            <a href="#" class="icon-link"><i class='bx bxl-github'></i></a>
           </div>
         </div>
         <ul class="project-points">
-          <li>Engineered a secure RESTful API with 15+ endpoints using Express and JWT/bcrypt for secure user
-            authentication and routing.</li>
-          <li>Built a responsive React frontend utilizing React Context API for global state management, seamlessly
-            handling 2 core user flows like board creation and task assignment.</li>
-          <li>Designed a scalable MongoDB database with 4 optimized schemas (Users, Boards, Tasks, etc.), enabling
-            efficient data retrieval and one-to-many relationship mapping.</li>
+          <li><strong>Engineered</strong> a secure RESTful API with 15+ endpoints using Express and JWT/bcrypt for
+            secure user authentication and routing.</li>
+          <li><strong>Built</strong> a responsive React frontend utilizing Context API for global state, seamlessly
+            handling core user flows.</li>
+          <li><strong>Designed</strong> a scalable MongoDB database with 4 optimized schemas enabling efficient
+            one-to-many mapping.</li>
         </ul>
-        <a href="https://promap-ebon.vercel.app" target="_blank" class="project-link" id="project-fullstack-link">
-          <i class='bx bx-link-external'></i> Live Demo
-        </a>
+        <div class="project-tags">
+          <span class="tag">React</span>
+          <span class="tag">Node.js</span>
+          <span class="tag">Express</span>
+          <span class="tag">MongoDB</span>
+        </div>
       </div>
 
-      <div class="project-card" id="project-weather">
+      <!-- Project 3 -->
+      <div class="project-card glass-card">
         <div class="project-header">
-          <h2><span>Weather App</span></h2>
-          <div class="project-tags">
-            <span class="tag">React</span>
+          <h2><span>Flow</span></h2>
+          <div class="project-links">
+            <a href="https://flow-fl.vercel.app" class="icon-link"><i class='bx bx-link-external'></i></a>
+            <a href="https://github.com/TitanThols/FLOW" class="icon-link"><i class='bx bxl-github'></i></a>
           </div>
         </div>
         <ul class="project-points">
-          <li>Engineered a dynamic frontend application using React to consume and display live data from a third-party
-            RESTful API.</li>
+          <li><strong>Engineered</strong> a 3D production tracking platform utilizing a Vite-powered React frontend and
+            Node.js/Express backend.</li>
+          <li><strong>Implemented</strong> robust RBAC and JWT authentication middleware securely isolating API routes.
+          </li>
+          <li><strong>Designed</strong> a responsive asset management UI featuring dynamic state tracking and automated
+            deadline highlighting via Axios.</li>
         </ul>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- EXPERIENCE -->
-  <section id="experience">
-    <h1 class="section-title"><span>Experience</span></h1>
-    <div class="clubs">
-      <div class="club-card" id="iota-card">
-        <img src="1000069368.jpg" alt="IOTA Club">
-        <div class="club-info">
-          <h2><span>IOTA</span></h2>
-          <p>WebDev Member</p>
-          <p class="club-desc">Contributing to web development projects, learning modern frameworks and building
-            responsive applications.</p>
+        <div class="project-tags">
+          <span class="tag">React</span>
+          <span class="tag">Node.js</span>
+          <span class="tag">Express</span>
+          <span class="tag">Axios</span>
+          <span class="tag">MongoDB</span>
         </div>
       </div>
+
     </div>
   </section>
 
   <!-- CONTACT -->
   <section id="contact">
-    <h1 class="header"><span>Contact Me</span></h1>
+    <div class="contact-container glass-card">
+      <h1 class="section-title text-center"><span>Contact Me</span></h1>
+      <p class="text-center contact-desc">Let's work together! Drop me a message.</p>
 
-    <form id="contactForm">
-      <div class="input-box">
-        <span>Full Name</span>
-        <input type="text" name="fullName" placeholder="Enter your full name" required>
-      </div>
+      <form id="contactForm">
+        <div class="input-box">
+          <label>Full Name</label>
+          <input type="text" name="fullName" placeholder="Enter your full name" required>
+        </div>
 
-      <div class="input-box">
-        <span>Email</span>
-        <input type="email" name="email" placeholder="Enter your email" required>
-      </div>
+        <div class="input-box">
+          <label>Email</label>
+          <input type="email" name="email" placeholder="Enter your email" required>
+        </div>
 
-      <div class="input-box">
-        <span>Message</span>
-        <textarea name="message" placeholder="Enter your message" required></textarea>
-      </div>
+        <div class="input-box">
+          <label>Message</label>
+          <textarea name="message" placeholder="Enter your message" required rows="4"></textarea>
+        </div>
 
-      <button type="submit" class="btn" id="contact-submit-btn">Send Message</button>
-    </form>
+        <button type="submit" class="btn primary-btn btn-full" id="contact-submit-btn">Send Message <i
+            class='bx bx-send'></i></button>
+      </form>
+    </div>
   </section>
 
   <footer id="footer">
@@ -238,12 +337,10 @@
           <i class='bx bx-map'></i>
           <span>IIIT Sri City, Andhra Pradesh</span>
         </div>
-
         <div class="col-box">
           <i class='bx bx-envelope'></i>
           <span>tholkappian.m24@iiits.in</span>
         </div>
-
         <div class="col-box">
           <i class='bx bx-phone'></i>
           <span>+91 7530092467</span>
@@ -252,26 +349,35 @@
 
       <div class="col-right">
         <div class="social-media">
-          <a href="https://www.instagram.com/thols_10/" target="_blank" aria-label="Instagram" id="footer-instagram">
+          <a href="https://www.instagram.com/thols_10/" target="_blank" aria-label="Instagram" class="glass-icon">
             <i class='bx bxl-instagram'></i>
           </a>
           <a href="https://www.linkedin.com/in/tholkappian-murugesan-bb401a326/" target="_blank" aria-label="LinkedIn"
-            id="footer-linkedin">
+            class="glass-icon">
             <i class='bx bxl-linkedin'></i>
           </a>
-          <a href="https://github.com/TitanThols" target="_blank" aria-label="GitHub" id="footer-github">
+          <a href="https://github.com/TitanThols" target="_blank" aria-label="GitHub" class="glass-icon">
             <i class='bx bxl-github'></i>
           </a>
-          <a href="https://leetcode.com/u/Thols_10/" target="_blank" aria-label="LeetCode" id="footer-leetcode">
+          <a href="https://leetcode.com/u/Thols_10/" target="_blank" aria-label="LeetCode" class="glass-icon">
             <i class='bx bx-code-alt'></i>
           </a>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2025 Tholkappian Murugesan. All rights reserved.</p>
+      <p>&copy; 2026 Tholkappian Murugesan. All rights reserved.</p>
     </div>
   </footer>
+
+  <!-- GSAP CDNs -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Extra Animation CDNs -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 
   <script src="script.js"></script>
 </body>
