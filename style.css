@@ -293,6 +293,8 @@ body {
 
 .img-glow {
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   border-radius: 50%;
@@ -304,6 +306,8 @@ body {
 
 .home-img, .about-img {
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
