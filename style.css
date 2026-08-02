@@ -74,9 +74,17 @@ body {
 }
 
 @keyframes float {
-  0% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(50px, 50px) scale(1.1); }
-  100% { transform: translate(-50px, -20px) scale(0.9); }
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate(50px, 50px) scale(1.1);
+  }
+
+  100% {
+    transform: translate(-50px, -20px) scale(0.9);
+  }
 }
 
 /* Glassmorphism Utilities */
@@ -150,6 +158,21 @@ body {
   color: #000;
 }
 
+/* FIX: .nav-btn (Resume link in nav) had no background/color rule at all —
+   it only carried .btn (shape/padding) with no modifier class in the HTML. */
+.nav-btn {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  color: var(--text-color);
+  padding: 0.6rem 1.5rem;
+}
+
+.nav-btn:hover {
+  background: var(--primary-color);
+  color: #000;
+  border-color: var(--primary-color);
+}
+
 /* Navigation */
 #nav {
   position: fixed;
@@ -157,8 +180,9 @@ body {
   width: 100%;
   padding: 1.5rem 5%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
   z-index: 1000;
   transition: all 0.4s ease;
 }
@@ -178,9 +202,14 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
+/* FIX: #nav has 4 flex children now (logo, links, menu icon, nav-btn).
+   space-between alone spreads all four evenly. Push links+menu+btn as a
+   group to the right, keep logo pinned left. */
 .links {
   display: flex;
+  align-items: center;
   gap: 2rem;
+  margin-left: auto;
 }
 
 .links a {
@@ -274,7 +303,7 @@ body {
 }
 
 .home-link-btn:hover {
-  background: rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.1);
   transform: translateY(-3px);
   border-color: var(--primary-color);
 }
@@ -284,7 +313,8 @@ body {
   gap: 1.5rem;
 }
 
-.home-img-wrapper, .about-img-wrapper {
+.home-img-wrapper,
+.about-img-wrapper {
   position: relative;
   width: 400px;
   height: 400px;
@@ -304,7 +334,8 @@ body {
   animation: pulse 4s infinite alternate;
 }
 
-.home-img, .about-img {
+.home-img,
+.about-img {
   position: absolute;
   top: 0;
   left: 0;
@@ -317,8 +348,15 @@ body {
 }
 
 @keyframes pulse {
-  0% { transform: scale(0.9); opacity: 0.3; }
-  100% { transform: scale(1.1); opacity: 0.6; }
+  0% {
+    transform: scale(0.9);
+    opacity: 0.3;
+  }
+
+  100% {
+    transform: scale(1.1);
+    opacity: 0.6;
+  }
 }
 
 /* ABOUT SECTION */
@@ -347,6 +385,15 @@ body {
   gap: 2rem;
 }
 
+/* Direct grid children — defined explicitly instead of relying on the
+   implicit "any direct child" grid behavior, since .skill-group is also
+   a GSAP animation target in script.js. */
+.skill-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
 .skill-label {
   font-size: 1.1rem;
   margin-bottom: 1rem;
@@ -366,6 +413,7 @@ body {
   border-radius: 15px;
   font-size: 0.9rem;
   transition: all 0.3s ease;
+  display: inline-block;
 }
 
 .tag:hover {
@@ -416,6 +464,7 @@ body {
   display: flex;
   gap: 1rem;
   margin-bottom: 1rem;
+  flex-wrap: wrap;
 }
 
 .edu-tag {
@@ -423,9 +472,15 @@ body {
   align-items: center;
   gap: 0.3rem;
   font-size: 0.9rem;
-  background: rgba(255,255,255,0.05);
+  background: rgba(255, 255, 255, 0.05);
   padding: 0.3rem 0.8rem;
   border-radius: 10px;
+}
+
+.edu-tag.highlight {
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  color: #000;
+  font-weight: 600;
 }
 
 .edu-coursework {
@@ -461,13 +516,16 @@ body {
   margin-left: 60px;
 }
 
+/* FIX: dot center math. Line sits at left:20px on .timeline, which is
+   -40px relative to .timeline-item's own left edge (margin-left:60px).
+   A 20px dot centered on that line needs left:-50px, not -49px. */
 .timeline-dot {
   position: absolute;
   width: 20px;
   height: 20px;
   background: var(--primary-color);
   border-radius: 50%;
-  left: -49px; /* 60 - 20/2 = 50 but visually adjust */
+  left: -50px;
   top: 30px;
   box-shadow: 0 0 10px var(--primary-color);
 }
@@ -506,6 +564,13 @@ body {
   margin-top: 1rem;
 }
 
+/* Tag row under experience timeline items */
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
 /* PROJECTS */
 #projects {
   padding: 100px 10%;
@@ -531,6 +596,11 @@ body {
 
 .project-header h2 {
   font-size: 1.4rem;
+}
+
+.project-links {
+  display: flex;
+  align-items: center;
 }
 
 .icon-link {
@@ -562,8 +632,16 @@ body {
   margin-bottom: 0.5rem;
   list-style-type: disc;
 }
+
 .project-points li strong {
   color: var(--text-color);
+}
+
+/* FIX: this was previously undefined. Tags under each project's bullet
+   list had no gap/wrap rule and just ran together as inline text. */
+.project-card .project-tags {
+  margin-top: auto;
+  padding-top: 0.5rem;
 }
 
 /* CONTACT */
@@ -598,7 +676,8 @@ body {
   color: var(--text-muted);
 }
 
-.input-box input, .input-box textarea {
+.input-box input,
+.input-box textarea {
   width: 100%;
   padding: 1rem;
   background: rgba(255, 255, 255, 0.05);
@@ -606,12 +685,18 @@ body {
   border-radius: 10px;
   color: var(--text-color);
   font-size: 1rem;
+  font-family: inherit;
   transition: border-color 0.3s ease;
 }
 
-.input-box input:focus, .input-box textarea:focus {
+.input-box input:focus,
+.input-box textarea:focus {
   outline: none;
   border-color: var(--primary-color);
+}
+
+.input-box textarea {
+  resize: vertical;
 }
 
 .btn-full {
@@ -622,6 +707,11 @@ body {
   gap: 0.5rem;
   font-size: 1.1rem;
   padding: 1rem;
+}
+
+.btn-full:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
 }
 
 /* FOOTER */
@@ -692,36 +782,58 @@ body {
 }
 
 /* RESPONSIVE MEDIA QUERIES */
+
+/* Large screens — nothing previously capped section width, so hero/timeline
+   would stretch indefinitely on ultrawide monitors. */
+@media (min-width: 1600px) {
+
+  #home,
+  #about,
+  #education,
+  #experience,
+  #projects,
+  #contact {
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 @media (max-width: 991px) {
   #nav {
     padding: 1rem 5%;
   }
-  
+
   #home {
     flex-direction: column;
     text-align: center;
     gap: 3rem;
     padding: 120px 5% 60px;
   }
-  
-  #about, #education, #experience, #projects, #contact {
+
+  #about,
+  #education,
+  #experience,
+  #projects,
+  #contact {
     padding: 80px 5%;
   }
-  
+
   .home-links {
     justify-content: center;
   }
-  
+
   .btn-box {
     justify-content: center;
   }
-  
+
   #about {
     flex-direction: column-reverse;
     text-align: center;
   }
-  
-  .home-img-wrapper, .about-img-wrapper {
+
+  .home-img-wrapper,
+  .about-img-wrapper {
     width: 300px;
     height: 300px;
     margin: 0 auto;
@@ -732,7 +844,7 @@ body {
   #menu {
     display: block;
   }
-  
+
   .links {
     position: absolute;
     top: 100%;
@@ -743,18 +855,26 @@ body {
     flex-direction: column;
     align-items: center;
     padding: 2rem 0;
+    margin-left: 0;
+    gap: 1.5rem;
     clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
     transition: clip-path 0.4s ease;
   }
-  
+
   .links.active {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
-  
+
+  /* Resume button now sits next to the hamburger icon at this width */
+  .nav-btn {
+    padding: 0.5rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
   .hero-title {
     font-size: 2.8rem;
   }
-  
+
   .hero-subtitle {
     font-size: 1.8rem;
   }
@@ -762,22 +882,35 @@ body {
   .hero-tagline {
     font-size: 1.3rem;
   }
-  
+
   .timeline::before {
     left: 0;
   }
-  
+
   .timeline-item {
     margin-left: 20px;
     padding: 1.5rem;
   }
-  
+
+  /* Line now at left:0, item offset margin-left:20px → line is -20px
+     relative to the item. Center a 20px dot on it: -30px. */
   .timeline-dot {
-    left: -28px;
+    left: -30px;
   }
-  
-  .edu-grid, .projects-grid {
+
+  .edu-grid,
+  .projects-grid {
     grid-template-columns: 1fr;
+  }
+
+  /* Icon + text side-by-side gets cramped on narrow cards */
+  .edu-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .edu-meta {
+    justify-content: center;
   }
 }
 
@@ -785,34 +918,39 @@ body {
   #home {
     padding: 100px 5% 50px;
   }
-  
-  #about, #education, #experience, #projects, #contact {
+
+  #about,
+  #education,
+  #experience,
+  #projects,
+  #contact {
     padding: 60px 5%;
   }
 
-  .home-img-wrapper, .about-img-wrapper {
+  .home-img-wrapper,
+  .about-img-wrapper {
     width: 220px;
     height: 220px;
     margin: 0 auto;
   }
-  
+
   .hero-title {
     font-size: 2.2rem;
   }
-  
+
   .hero-subtitle {
     font-size: 1.4rem;
   }
-  
+
   .hero-tagline {
     font-size: 1.1rem;
   }
-  
+
   .section-title {
     font-size: 1.8rem;
     margin-bottom: 2rem;
   }
-  
+
   .btn-box {
     flex-direction: column;
     gap: 1rem;
@@ -822,23 +960,61 @@ body {
   .btn-box .btn {
     width: 100%;
   }
-  
+
   .footer-container {
     flex-direction: column;
     align-items: center;
     text-align: center;
   }
-  
+
   .glass-card {
     padding: 1.2rem;
   }
-  
+
   .home-links {
     gap: 0.5rem;
   }
-  
+
   .home-link-btn {
     padding: 0.5rem 1rem;
     font-size: 0.9rem;
+  }
+
+  /* Body text under timeline/project cards stayed at desktop size while
+     everything around it shrank — inconsistent on small screens. */
+  .timeline-points,
+  .project-points {
+    font-size: 0.85rem;
+  }
+}
+
+/* Below iPhone SE width (375px) — previous smallest breakpoint (480px)
+   had nothing further down, so 320–375px devices got no adjustment. */
+@media (max-width: 380px) {
+  .hero-title {
+    font-size: 1.9rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .home-img-wrapper,
+  .about-img-wrapper {
+    width: 180px;
+    height: 180px;
+  }
+
+  .glass-card {
+    padding: 1rem;
+  }
+
+  .nav-btn {
+    padding: 0.4rem 0.9rem;
+    font-size: 0.8rem;
   }
 }
