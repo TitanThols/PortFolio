@@ -714,11 +714,13 @@ body {
   
   #about {
     flex-direction: column-reverse;
+    text-align: center;
   }
   
   .home-img-wrapper, .about-img-wrapper {
     width: 300px;
     height: 300px;
+    margin: 0 auto;
   }
 }
 
@@ -787,6 +789,7 @@ body {
   .home-img-wrapper, .about-img-wrapper {
     width: 220px;
     height: 220px;
+    margin: 0 auto;
   }
   
   .hero-title {
