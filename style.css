@@ -690,13 +690,18 @@ body {
 /* RESPONSIVE MEDIA QUERIES */
 @media (max-width: 991px) {
   #nav {
-    padding: 1.5rem 5%;
+    padding: 1rem 5%;
   }
   
   #home {
     flex-direction: column;
     text-align: center;
     gap: 3rem;
+    padding: 120px 5% 60px;
+  }
+  
+  #about, #education, #experience, #projects, #contact {
+    padding: 80px 5%;
   }
   
   .home-links {
@@ -727,7 +732,7 @@ body {
     top: 100%;
     left: 0;
     width: 100%;
-    background: rgba(10, 10, 10, 0.95);
+    background: rgba(10, 10, 10, 0.98);
     backdrop-filter: blur(10px);
     flex-direction: column;
     align-items: center;
@@ -741,11 +746,15 @@ body {
   }
   
   .hero-title {
-    font-size: 3rem;
+    font-size: 2.8rem;
   }
   
   .hero-subtitle {
-    font-size: 2rem;
+    font-size: 1.8rem;
+  }
+
+  .hero-tagline {
+    font-size: 1.3rem;
   }
   
   .timeline::before {
@@ -760,25 +769,69 @@ body {
   .timeline-dot {
     left: -28px;
   }
+  
+  .edu-grid, .projects-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 480px) {
+  #home {
+    padding: 100px 5% 50px;
+  }
+  
+  #about, #education, #experience, #projects, #contact {
+    padding: 60px 5%;
+  }
+
   .home-img-wrapper, .about-img-wrapper {
-    width: 250px;
-    height: 250px;
+    width: 220px;
+    height: 220px;
+  }
+  
+  .hero-title {
+    font-size: 2.2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.4rem;
+  }
+  
+  .hero-tagline {
+    font-size: 1.1rem;
   }
   
   .section-title {
-    font-size: 2rem;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
   }
   
   .btn-box {
     flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .btn-box .btn {
+    width: 100%;
   }
   
   .footer-container {
     flex-direction: column;
     align-items: center;
     text-align: center;
+  }
+  
+  .glass-card {
+    padding: 1.2rem;
+  }
+  
+  .home-links {
+    gap: 0.5rem;
+  }
+  
+  .home-link-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
   }
 }
